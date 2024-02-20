@@ -1,6 +1,39 @@
-/* GENERAL */
+/***********************/
+/* GLOBAL CSS SETTINGS */
+/***********************/
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+
+  --a-hover: grey;
+  --a-hover-decoration: rgb(181, 181, 181);
+  --box-decoration: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+
+
+  --main-background-color-white: white;
+  --main-container-background-color-white: #fcfcff;
+  --paragraph-color-light: rgb(85, 85, 85);
+  --title-color-white: black;
+  --subtitle-color-white: white;
+
+
+
+  --main-background-color-dark: #121212;
+  --main-container-background-color-dark: #1e1e1e;
+  --border-color-dark: rgb(163, 163, 163);
+  --border-dark: rgb(53, 53, 53) 0.1rem solid;
+  --paragraph-color-dark: rgb(211, 211, 211);
+  --title-color-dark: white;
+  --subtitle-color-dark: rgb(85, 85, 85);
+  --item-color-dark: white;
+  --btn-color-dark: white;
+}
+
+/************************/
+/*DIMENSION AND FONT CSS*/
+/************************/
 
 * {
   margin: 0;
@@ -8,7 +41,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "League Spartan", sans-serif;
 }
 
 html {
@@ -16,20 +49,43 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  margin: 4px;
+  line-height: 1.4rem;
 }
 
 /* TRANSITION */
 
-a,
-.btn {
+a, .btn {
   transition: all 300ms ease;
 }
 
 /* DESKTOP NAV */
 
-nav,
-.nav-links {
+/* video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.video-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header{
+  position: relative;
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+} */
+
+nav, .nav-links {
   display: flex;
 }
 
@@ -46,16 +102,12 @@ nav {
 }
 
 a {
-  color: black;
   text-decoration: none;
-  text-decoration-color: white;
 }
 
 a:hover {
-  color: grey;
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
 }
 
 .logo {
@@ -89,7 +141,6 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
   transition: all 0.3 ease-in-out;
 }
 
@@ -97,7 +148,6 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -109,7 +159,6 @@ a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color: black;
   text-decoration: none;
   transition: all 0.3 ease-in-out;
 }
@@ -120,6 +169,9 @@ a:hover {
 
 .menu-links.open {
   max-height: 300px;
+  padding: 50%;
+  margin-top: 1vh;
+  border-radius: 1rem;
 }
 
 .hamburger-icon.open span:first-child {
@@ -171,9 +223,15 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
+  justify-content: center;
+  margin: 0 0;
+}
+
+.section__pic-container img{
+    display: block;
+    margin: 0;
+    margin-top: 1rem;
+    border-radius: 1rem;
 }
 
 .section__text {
@@ -186,11 +244,13 @@ section {
 }
 
 .section__text__p1 {
+  font-size: 1.50rem;
   text-align: center;
 }
 
 .section__text__p2 {
   font-size: 1.75rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -226,12 +286,7 @@ section {
   transition: all 300ms ease;
   padding: 1rem;
   width: 8rem;
-  border-radius: 2rem;
-}
-
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border-radius: 0.75rem;
 }
 
 .btn-color-1:hover,
@@ -239,26 +294,16 @@ section {
   cursor: pointer;
 }
 
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
-}
-
-.btn-color-1:hover {
-  background: rgb(0, 0, 0);
-}
-
 .btn-color-2 {
   background: none;
 }
 
-.btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
-}
-
 .btn-container {
   gap: 1rem;
+}
+
+.text_more_info {
+  text-align: center;
 }
 
 /* ABOUT SECTION */
@@ -284,7 +329,7 @@ section {
 }
 
 .about-pic {
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .arrow {
@@ -296,11 +341,13 @@ section {
 .details-container {
   padding: 1.5rem;
   flex: 1;
-  background: white;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
+  border-radius: 1rem;
   text-align: center;
+  align-content: center;
+}
+
+.details-container p{
+  padding-top: 1rem;
 }
 
 .section-container {
@@ -321,7 +368,6 @@ section {
 }
 
 .experience-sub-title {
-  color: rgb(85, 85, 85);
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
@@ -359,25 +405,14 @@ article .icon {
   position: relative;
 }
 
-.color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
-}
-
 .project-img {
-  border-radius: 2rem;
+  border-radius: 1rem;
   width: 90%;
   height: 90%;
 }
 
 .project-title {
   margin: 1rem;
-  color: black;
-}
-
-.project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
 }
 
 /* CONTACT */
@@ -392,10 +427,7 @@ article .icon {
 .contact-info-upper-container {
   display: flex;
   justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
+  border-radius: 1rem;
   margin: 2rem auto;
   padding: 0.5rem;
 }
@@ -429,4 +461,175 @@ footer {
 
 footer p {
   text-align: center;
+}
+/********************/
+/*THEMING COLORS CSS*/
+/********************/
+
+
+@media (prefers-color-scheme: light) {
+  
+  body {
+    background: var(--main-background-color-white);
+  }
+
+  p {
+    color: var(--paragraph-color-light);
+  }
+
+  a {
+    color: var(--title-color-white);
+    text-decoration-color: var(--title-color-white);
+  }
+
+  a:hover {
+    color: grey;
+    text-decoration-color: rgb(181, 181, 181);
+  }
+
+  h1 {
+    color: black;
+  }
+
+  .menu-links.open {
+    background-color: white;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  }
+
+  .logo {
+    color: black;
+  }
+
+  .hamburger-icon span {
+    background-color: black;
+  }
+
+  .menu-links {
+    background-color: white;
+  }
+  
+  .menu-links a {
+    color: black;
+  }
+
+  .btn-color-1,
+  .btn-color-2 {
+    border: rgb(53, 53, 53) 0.1rem solid;
+  }
+
+  .btn-color-1,
+  .btn-color-2:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+  }
+  
+  .btn-color-1:hover {
+    background: rgb(0, 0, 0);
+  }
+
+  .btn-color-2:hover {
+    border: rgb(255, 255, 255) 0.1rem solid;
+  }
+
+  .details-container {
+    background: var(--main-container-background-color-white);
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+  }
+
+  .experience-sub-title {
+    color: rgb(85, 85, 85);
+  }
+
+  .color-container {
+    border-color: rgb(163, 163, 163);
+    background: var(--main-container-background-color-white);
+  }
+
+  .project-title {
+    color: black;
+  }
+  
+  .project-btn {
+    color: black;
+    border-color: rgb(163, 163, 163);
+  }
+
+  .contact-info-upper-container {
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    background: (250, 250, 250);
+  }
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background: var(--main-background-color-dark);
+  }
+
+  p {
+    color: var(--paragraph-color-dark);
+  }
+
+  .hamburger-icon span {
+    background-color: var(--item-color-dark);
+  }
+
+  a {
+    color: var(--title-color-dark);
+    text-decoration-color: var(--title-color-dark);
+  }
+
+  a:hover {
+    color: var(--a-hover);
+    text-decoration-color: var(--a-hover-decoration);
+  }
+
+  h1 {
+    color: var(--title-color-dark);
+  }
+
+  h3 {
+    color: var(--title-color-dark);
+  }
+
+  .menu-links.open {
+    background-color: #4e4e4e;
+    box-shadow: var(--box-decoration);
+  }
+
+  .logo {
+    color: var(--title-color-dark);
+  }
+
+  .details-container {
+    background: var(--main-container-background-color-dark);
+    border: var(--border-dark);
+    border-color: var(--border-color-dark);
+  }
+
+  .experience-sub-title {
+    color: var(--subtitle-color-dark);
+  }
+
+  .color-container {
+    border-color: var(--border-color-dark);
+    background: var(--main-container-background-color-dark);
+  }
+
+  .project-title {
+    color: var(--title-color-dark);
+  }
+  
+  .project-btn {
+    color: var(--btn-color-dark);
+    border-color: var(--border-color-dark);
+  }
+
+  .contact-info-upper-container {
+    border: var(--border-dark);
+    border-color: var(--border-color-dark);
+  }
 }
